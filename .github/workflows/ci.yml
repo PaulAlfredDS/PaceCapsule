@@ -1,0 +1,9 @@
+name: iOS CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests
+        run: xcodebuild test -scheme PaceCapsule -destination 'platform=iOS Simulator,name=iPhone 15'
